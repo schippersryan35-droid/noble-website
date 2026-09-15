@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NOBLE — Premium Designer Streetwear</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#111;background:#fff}
+a{text-decoration:none;color:inherit}button{font-family:inherit}
+.top{height:68px;border-bottom:1px solid #e5e5e5;display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;background:#fff;z-index:10}
+.logo{font-weight:900;font-size:27px;letter-spacing:8px}.nav{display:flex;gap:24px;font-size:11px;font-weight:700;letter-spacing:1px}.icons{display:flex;gap:9px}.icon{width:40px;height:40px;border:1px solid #ddd;background:#fff;border-radius:50%;cursor:pointer}
+.badge{font-size:10px;background:#111;color:#fff;border-radius:50%;padding:3px 6px;margin-left:2px}
+.hero{height:610px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.hero:after{content:"NOBLE";position:absolute;font-size:180px;font-weight:900;letter-spacing:20px;opacity:.035;white-space:nowrap}
+.hero-content{z-index:1}.eyebrow{font-size:11px;letter-spacing:5px;margin:0 0 32px}.hero h1{font-size:64px;line-height:.9;margin:0 0 35px;letter-spacing:-4px}.shop{display:inline-block;background:#fff;color:#111;padding:22px 65px;font-weight:800;letter-spacing:3px;font-size:12px}
+section{padding:74px 28px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:34px}.section-head h2{font-size:40px;letter-spacing:-2px;margin:0}.view{font-size:11px;letter-spacing:2px}
+.categories{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.cat{height:310px;background:#eee;display:flex;align-items:end;padding:28px;font-size:23px;font-weight:900;position:relative;overflow:hidden}.cat:nth-child(2){background:#e7e7e7}.cat:nth-child(3){background:#ddd}.cat:nth-child(4){background:#f0f0f0}.cat:before{content:"";position:absolute;width:150px;height:210px;background:#fff;opacity:.38;transform:rotate(20deg);right:25%;top:-40px}.cat span{z-index:1}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.product{position:relative}.photo{height:370px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.photo:before{content:"";width:55%;height:72%;background:linear-gradient(145deg,#d4d4d4,#fff);clip-path:polygon(28% 0,72% 0,100% 30%,82% 100%,18% 100%,0 30%)}.photo b{position:absolute;font-size:28px;letter-spacing:2px}.heart{position:absolute;top:12px;right:12px;border:0;background:#fff;border-radius:50%;width:39px;height:39px;font-size:19px;z-index:2;cursor:pointer}.heart.active{background:#111;color:#fff}.meta{padding:14px 0 25px}.brand{font-size:10px;letter-spacing:2px;color:#777}.name{font-weight:800;font-size:16px;margin:7px 0}.price{font-size:14px}.add{margin-top:10px;width:100%;height:40px;background:#111;color:#fff;border:0;font-weight:700;cursor:pointer}
+.brands{border-top:1px solid #ddd}.brandlist{border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:35px 0;display:flex;flex-wrap:wrap;gap:22px 32px;font-size:20px;font-weight:900}
+.favs{background:#f7f7f7}.empty{color:#777;padding:20px 0}
+.overlay{position:fixed;inset:0;background:#0007;z-index:20;opacity:0;pointer-events:none;transition:.25s}.overlay.on{opacity:1;pointer-events:auto}
+.cart{position:fixed;right:0;top:0;width:min(430px,100%);height:100%;background:#fff;z-index:30;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column}.cart.open{transform:translateX(0)}.carthead{padding:25px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.carthead h2{margin:0}.close{border:0;background:none;font-size:30px;cursor:pointer}.cartitems{flex:1;overflow:auto;padding:20px}.item{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid #eee}.thumb{background:#eee;height:85px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900}.qty{margin-top:8px;display:flex;align-items:center;gap:8px}.qty button{width:27px;height:27px;border:1px solid #ddd;background:#fff;font-size:16px;cursor:pointer}.remove{border:0;background:none;text-decoration:underline;font-size:10px;padding:5px 0;cursor:pointer}.cartfoot{padding:20px;border-top:1px solid #ddd}.total{display:flex;justify-content:space-between;font-weight:800;margin-bottom:15px}.checkout{width:100%;height:48px;background:#111;color:#fff;border:0;font-weight:800;letter-spacing:2px;cursor:pointer}
+footer{background:#111;color:#fff;padding:70px 28px;font-size:12px;display:flex;justify-content:space-between}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(15px);background:#111;color:#fff;padding:12px 20px;border-radius:30px;opacity:0;z-index:50;transition:.2s;font-size:12px}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:700px){.top{padding:0 18px}.nav{display:none}.logo{font-size:22px}.hero{height:540px}.hero h1{font-size:51px}.hero:after{font-size:90px}.shop{padding:19px 45px}section{padding:60px 20px}.section-head h2{font-size:32px}.cat{height:205px;padding:18px;font-size:18px}.photo{height:260px}.products{gap:10px}.brandlist{gap:18px;font-size:17px}footer{padding:50px 20px;display:block}}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#">NOBLE</a>
+  <nav class="nav"><a href="#shop">SHOP</a><a href="#brands">BRANDS</a><a href="#favorites">FAVORITES <span class="badge" id="favCount">0</span></a></nav>
+  <div class="icons"><button class="icon" onclick="openCart()" aria-label="Winkelwagen">🛒 <span class="badge" id="cartCount">0</span></button></div>
+</header>
+<section class="hero"><div class="hero-content"><p class="eyebrow">PREMIUM DESIGNER STREETWEAR</p><h1>TIMELESS<br>PIECES.</h1><a class="shop" href="#shop">SHOP NOW →</a></div></section>
+<section id="shop"><div class="section-head"><h2>SHOP BY CATEGORY</h2><a class="view" href="#products">VIEW ALL →</a></div><div class="categories"><a class="cat" href="#products"><span>CLOTHING</span></a><a class="cat" href="#products"><span>SNEAKERS</span></a><a class="cat" href="#products"><span>ACCESSORIES</span></a><a class="cat" href="#products"><span>NEW IN</span></a></div></section>
+<section id="products"><div class="section-head"><h2>FEATURED PRODUCTS</h2><span class="view">CURATED DAILY</span></div><div class="products" id="grid"></div></section>
+<section class="brands" id="brands"><div class="section-head"><h2>FEATURED BRANDS</h2></div><div class="brandlist"><span>ESSENTIALS</span><span>DIOR</span><span>GALLERY DEPT.</span><span>AMIRI</span><span>AMI PARIS</span><span>LOUIS VUITTON</span><span>PURPLE BRAND</span><span>RALPH LAUREN</span><span>CHROME HEARTS</span></div></section>
+<section class="favs" id="favorites"><div class="section-head"><h2>FAVORITES</h2></div><div id="favoritesList"></div></section>
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="cart" id="cart"><div class="carthead"><h2>YOUR BAG</h2><button class="close" onclick="closeCart()">×</button></div><div class="cartitems" id="cartitems"></div><div class="cartfoot"><div class="total"><span>TOTAL</span><span id="total">€0,00</span></div><button class="checkout" onclick="toast('Demo checkout — nog niet gekoppeld.')">CHECKOUT</button></div></aside>
+<div class="toast" id="toast"></div>
+<footer><b>NOBLE</b><span>PREMIUM DESIGNER STREETWEAR</span></footer>
+<script>
+const products=[{"id": 1, "brand": "ESSENTIALS", "name": "Essentials Hoodie", "price": 185}, {"id": 2, "brand": "DIOR", "name": "B22 Sneaker", "price": 849.95}, {"id": 3, "brand": "GALLERY DEPT.", "name": "Longsleeve", "price": 399.95}, {"id": 4, "brand": "AMIRI", "name": "MA Logo Tee", "price": 310}, {"id": 5, "brand": "AMI PARIS", "name": "Ami de Coeur Hoodie", "price": 295}, {"id": 6, "brand": "LOUIS VUITTON", "name": "Trainer Sneaker", "price": 1090}, {"id": 7, "brand": "PURPLE BRAND", "name": "P001 Denim", "price": 190}, {"id": 8, "brand": "RALPH LAUREN", "name": "Classic Polo", "price": 135}, {"id": 9, "brand": "CHROME HEARTS", "name": "Cross Hoodie", "price": 650}, {"id": 10, "brand": "DIOR", "name": "B25 Sneaker", "price": 920}];
+let cart=JSON.parse(localStorage.getItem("nobleCart")||"[]");
+let fav=JSON.parse(localStorage.getItem("nobleFav")||"[]");
+const eur=n=>new Intl.NumberFormat("nl-NL",{style:"currency",currency:"EUR"}).format(n);
+function save(){localStorage.setItem("nobleCart",JSON.stringify(cart));localStorage.setItem("nobleFav",JSON.stringify(fav));}
+function mark(p){return p.brand==="LOUIS VUITTON"?"LV":p.brand.split(" ")[0];}
+function card(p){let liked=fav.includes(p.id);return `<article class="product"><div class="photo"><button class="heart ${liked?"active":""}" onclick="toggleFav(${p.id})">${liked?"♥":"♡"}</button><b>${mark(p)}</b></div><div class="meta"><div class="brand">${p.brand}</div><div class="name">${p.name}</div><div class="price">${eur(p.price)}</div><button class="add" onclick="add(${p.id})">ADD TO BAG</button></div></article>`;}
+function renderProducts(){document.getElementById("grid").innerHTML=products.map(card).join("");}
+function renderFavs(){let list=products.filter(p=>fav.includes(p.id));document.getElementById("favoritesList").innerHTML=list.length?`<div class="products">${list.map(card).join("")}</div>`:`<div class="empty">Je hebt nog geen favorieten. Klik op ♡ bij een product.</div>`;}
+function toggleFav(id){fav=fav.includes(id)?fav.filter(x=>x!==id):[...fav,id];save();renderProducts();renderFavs();counts();toast(fav.includes(id)?"Favoriet opgeslagen":"Favoriet verwijderd");}
+function add(id){let x=cart.find(a=>a.id===id);x?x.qty++:cart.push({id,qty:1});save();renderCart();counts();toast("Toegevoegd aan winkelwagen");}
+function changeQty(id,d){let x=cart.find(a=>a.id===id);if(!x)return;x.qty+=d;if(x.qty<=0)removeItem(id);else{save();renderCart();counts();}}
+function removeItem(id){cart=cart.filter(x=>x.id!==id);save();renderCart();counts();toast("Product verwijderd");}
+function renderCart(){let el=document.getElementById("cartitems");if(!cart.length){el.innerHTML='<div class="empty">Je winkelwagen is leeg.</div>';document.getElementById("total").textContent=eur(0);return;}el.innerHTML=cart.map(x=>{let p=products.find(a=>a.id===x.id);return `<div class="item"><div class="thumb">${mark(p)}</div><div><b>${p.name}</b><small style="display:block;color:#777;margin:4px 0">${p.brand}</small><strong>${eur(p.price*x.qty)}</strong><div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><span>${x.qty}</span><button onclick="changeQty(${p.id},1)">+</button></div><button class="remove" onclick="removeItem(${p.id})">Verwijderen</button></div></div>`;}).join("");document.getElementById("total").textContent=eur(cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0));}
+function counts(){document.getElementById("cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0);document.getElementById("favCount").textContent=fav.length;}
+function openCart(){document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("on");}
+function closeCart(){document.getElementById("cart").classList.remove("open");document.getElementById("overlay").classList.remove("on");}
+function toast(t){let x=document.getElementById("toast");x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),1400);}
+renderProducts();renderFavs();renderCart();counts();
+</script>
+</body></html>
