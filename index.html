@@ -38,7 +38,7 @@ footer{background:#111;color:#fff;padding:70px 28px;font-size:12px;display:flex;
 <div class="overlay" id="overlay" onclick="closeCart()"></div>
 <aside class="cart" id="cart"><div class="carthead"><h2>YOUR BAG</h2><button class="close" onclick="closeCart()">×</button></div><div class="cartitems" id="cartitems"></div><div class="cartfoot"><div class="total"><span>TOTAL</span><span id="total">€0,00</span></div><button class="checkout" onclick="toast('Demo checkout — nog niet gekoppeld.')">CHECKOUT</button></div></aside>
 <div class="toast" id="toast"></div>
-<footer><b>NOBLE</b><span>PREMIUM DESIGNER STREETWEAR</span></footer>
+<footer><b>M&R fashion</b><span>PREMIUM DESIGNER STREETWEAR</span></footer>
 <script>
 const products=[{"id": 1, "brand": "ESSENTIALS", "name": "Essentials Hoodie", "price": 185}, {"id": 2, "brand": "DIOR", "name": "B22 Sneaker", "price": 849.95}, {"id": 3, "brand": "GALLERY DEPT.", "name": "Longsleeve", "price": 399.95}, {"id": 4, "brand": "AMIRI", "name": "MA Logo Tee", "price": 310}, {"id": 5, "brand": "AMI PARIS", "name": "Ami de Coeur Hoodie", "price": 295}, {"id": 6, "brand": "LOUIS VUITTON", "name": "Trainer Sneaker", "price": 1090}, {"id": 7, "brand": "PURPLE BRAND", "name": "P001 Denim", "price": 190}, {"id": 8, "brand": "RALPH LAUREN", "name": "Classic Polo", "price": 135}, {"id": 9, "brand": "CHROME HEARTS", "name": "Cross Hoodie", "price": 650}, {"id": 10, "brand": "DIOR", "name": "B25 Sneaker", "price": 920}];
 let cart=JSON.parse(localStorage.getItem("nobleCart")||"[]");
